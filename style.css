@@ -54,11 +54,14 @@ ul {
 
 a {
   text-decoration: none;
-  margin-right: 40px;
   font-size: 0.8rem;
   padding: 5px 20px;
   border-radius: 3px;
   color: white;
+}
+
+.navigation a {
+  margin-right: 40px;
 }
 
 a:hover{
@@ -151,10 +154,6 @@ input[type="button"] {
   border-radius: 4px;
 }
 
-.menuBtn{
-  z-index: 10;
-}
-
 .menuBtn img {
   display: none;
   height: 48px;
@@ -162,13 +161,18 @@ input[type="button"] {
   cursor: pointer;
 }
 
+
+#close {
+  display: none;
+}
+
 @media only screen and (max-width: 1140px) {
   .hero-image {
     margin-right: 5%;
   }
 
-  a {
-    margin-right: 20px;
+  .navigation a {
+    margin-right: 15px;
   }
 }
 
@@ -210,14 +214,16 @@ input[type="button"] {
 @media only screen and (max-width: 855px) {
   .nav-items {
     position: absolute;
-    width: 100%;
+    width: 0;
     height: 100%;
+    overflow: hidden;
     justify-content: center;
     align-items: center;
-    left: 0;
+    right: 0;
     top: 0;
     background: black;
     flex-direction: column;
+    transition: ease-in 0.2s;
   }
 
   .navigation ul {
@@ -233,20 +239,62 @@ input[type="button"] {
     margin-top: 40px;
   }
 
-  /*
-  nav ul li {
-    margin: 5px;
-  }
-
-  .sign-in li {
-    display: inline-block;
-  } */
-
-  #open {
+#open {
     display: block;
   }
 
-  #close {
+#close{
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  z-index: 10;
+}
+
+.hero-content h1{
+  font-size: 1.7rem;
+}
+
+.searches{
+  flex-wrap: wrap;
+}
+
+}
+
+@media only screen and (max-width: 781px){
+  .hero-image {
     display: none;
   }
+
+  .container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+.hero-content{
+  width: 80%;
+}
+
+  .hero-text{
+    flex-basis: 100%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 299px){
+  :root, input, a {
+    font-size: 10px;
+  }
+  input[type="text"] {
+    padding: 6px 12px;
+  }
+  .menuBtn img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .searches{
+    display: none;
+  }
+
 }

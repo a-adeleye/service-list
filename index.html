@@ -23,7 +23,9 @@
                   <a href="#">For Service Providers</a>
                 </ul>
               </div>
-
+              <div>
+                <input type="checkbox">
+              </div>
               <div class="sign-in">
                 <ul>
                   <a href="#">Sign In</a>
@@ -32,8 +34,8 @@
               </div>
             </div>
             <div class="menuBtn">
-              <img id="open" src="menu.png" alt="" />
-              <img id="close" src="cancel.png" alt="" />
+              <img id="open" onclick="toggleMenuOpen()" src="menu.png" alt="" />
+              <img id="close" onclick="toggleMenuClose()" src="cancel.png" alt="" />
             </div>
           </nav>
         </div>
@@ -68,5 +70,19 @@
         </div>
       </section>
     </div>
+    <script>
+      function toggleMenuOpen () {
+        document.querySelector('.nav-items').style.width = '100%';
+        document.getElementById('open').style.display = 'none';
+        document.getElementById('close').style.display = 'block';
+      }
+
+      function toggleMenuClose () {
+        document.querySelector('.nav-items').style.width = '0';
+        document.getElementById('open').style.display = 'block';
+        document.getElementById('close').style.display = 'none';
+      }
+      
+    </script>
   </body>
 </html>
