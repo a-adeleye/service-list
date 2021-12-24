@@ -11,6 +11,11 @@
     <div class="landing">
       <section class="header">
         <div class="container">
+          <div class="night-mode-toggle">
+            <a class="dark" href="#" onclick="nightMode()">Dark</a>
+            <a class="light" href="#" onclick="lightMode()">Light</a>
+          </div>
+
           <nav>
             <div class="logo">
               <h4><span class="blue">service</span>list</h4>
@@ -18,24 +23,26 @@
             <div class="nav-items">
               <div class="navigation">
                 <ul>
-                  <a href="#">Explore</a>
-                  <a href="#">How It Works</a>
-                  <a href="#">For Service Providers</a>
+                  <a class="light-mode-blue" href="#">Explore</a>
+                  <a class="light-mode-blue" href="#">How It Works</a>
+                  <a class="light-mode-blue" href="#">For Service Providers</a>
                 </ul>
-              </div>
-              <div>
-                <input type="checkbox">
               </div>
               <div class="sign-in">
                 <ul>
-                  <a href="#">Sign In</a>
+                  <a href="#" class="light-mode-blue">Sign In</a>
                   <a href="#" class="join">Join</a>
                 </ul>
               </div>
             </div>
             <div class="menuBtn">
               <img id="open" onclick="toggleMenuOpen()" src="menu.png" alt="" />
-              <img id="close" onclick="toggleMenuClose()" src="cancel.png" alt="" />
+              <img
+                id="close"
+                onclick="toggleMenuClose()"
+                src="cancel.png"
+                alt=""
+              />
             </div>
           </nav>
         </div>
@@ -48,7 +55,7 @@
               <h1>
                 <span class="thin"
                   >Your all-in-one portal<br />for hiring all the </span
-                >services<br />you need
+                ><span class="light-mode-blue">services<br />you need</span>
               </h1>
               <div style="display: flex">
                 <input
@@ -71,18 +78,55 @@
       </section>
     </div>
     <script>
-      function toggleMenuOpen () {
-        document.querySelector('.nav-items').style.width = '100%';
-        document.getElementById('open').style.display = 'none';
-        document.getElementById('close').style.display = 'block';
+      function toggleMenuOpen() {
+        document.querySelector(".nav-items").style.width = "100%";
+        document.getElementById("open").style.display = "none";
+        document.getElementById("close").style.display = "block";
       }
 
-      function toggleMenuClose () {
-        document.querySelector('.nav-items').style.width = '0';
-        document.getElementById('open').style.display = 'block';
-        document.getElementById('close').style.display = 'none';
+      function toggleMenuClose() {
+        document.querySelector(".nav-items").style.width = "0";
+        document.getElementById("open").style.display = "block";
+        document.getElementById("close").style.display = "none";
       }
-      
+
+      let body = document.querySelector("body");
+      let h1 = document.querySelector("h1");
+      let lightModeBlue = document.querySelectorAll(".light-mode-blue");
+      let searches = document.querySelector(".searches");
+      let h4Hero = document.querySelector('h4');
+      let light = document.querySelector('.light');
+
+      function lightMode() {
+        body.style.background = "white";
+        h1.style.color = "black";
+
+        let i = 0;
+        while(i < lightModeBlue.length){
+          lightModeBlue[i].style.color = "#2a8ce5";
+          i++;
+        }
+        searches.style.color = "#333";
+        h4Hero.style.color = 'black';
+        light.style.background = 'white';
+        light.style.color = '#333';
+      }
+
+      function nightMode() {
+        document.querySelector("body").style.background = "black";
+        h1.style.color = "white";
+        let i = 0;
+
+        while(i < lightModeBlue.length){
+          lightModeBlue[i].style.color = "white";
+          i++;
+        }
+        
+        searches.style.color = "white";
+        h4Hero.style.color = 'black';
+        light.style.background = 'rgba(58, 57, 57, 0.747)';
+        light.style.color = 'white';
+      }
     </script>
   </body>
 </html>

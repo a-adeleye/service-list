@@ -8,6 +8,7 @@ body {
   background-color: var(--main-bg-color);
   color: var(--main-font-color);
   font-family: "Open Sans", sans-serif;
+  transition: background-color 0.4s;
 }
 
 :root {
@@ -55,7 +56,7 @@ ul {
 a {
   text-decoration: none;
   font-size: 0.8rem;
-  padding: 5px 20px;
+  padding: 5px 10px;
   border-radius: 3px;
   color: white;
 }
@@ -164,6 +165,33 @@ input[type="button"] {
 
 #close {
   display: none;
+}
+
+.night-mode-toggle{
+  display: flex;
+  width: 200px;
+  position: absolute;
+  top: 1%;
+  left: 44%;
+  height: 30px;
+  gap: 10px;
+}
+
+.dark, .light{
+  font-size: 12px;
+}
+
+.dark{
+  border-right: 1px solid grey;
+  background: black;
+}
+
+.light{
+  background: rgba(58, 57, 57, 0.747);
+}
+
+.dark:hover, .light:hover{
+  background: #333;
 }
 
 @media only screen and (max-width: 1140px) {
