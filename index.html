@@ -96,6 +96,7 @@
       let searches = document.querySelector(".searches");
       let h4Hero = document.querySelector('h4');
       let light = document.querySelector('.light');
+      let navItems = document.querySelector('.nav-items');
 
       function lightMode() {
         body.style.background = "white";
@@ -110,6 +111,7 @@
         h4Hero.style.color = 'black';
         light.style.background = 'white';
         light.style.color = '#333';
+        navItems.style.background = 'white';
       }
 
       function nightMode() {
@@ -124,8 +126,9 @@
         
         searches.style.color = "white";
         h4Hero.style.color = 'black';
-        light.style.background = 'rgba(58, 57, 57, 0.747)';
+        light.style.background = '#2a8ce5';
         light.style.color = 'white';
+        navItems.style.background = 'black';
       }
     </script>
   </body>

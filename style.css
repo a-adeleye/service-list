@@ -179,6 +179,7 @@ input[type="button"] {
 
 .dark, .light{
   font-size: 12px;
+  border-radius: 0;
 }
 
 .dark{
@@ -187,7 +188,7 @@ input[type="button"] {
 }
 
 .light{
-  background: rgba(58, 57, 57, 0.747);
+  background: #2a8ce5;
 }
 
 .dark:hover, .light:hover{
